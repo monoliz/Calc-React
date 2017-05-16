@@ -66,7 +66,7 @@ class App extends React.Component {
       '*': (a,b) => Number(a) * Number(b),
       '/': (a,b) => Number(a) / Number(b)
     }
-    if (operation.length + 1 && numbers.length === numFields && (operation || numbers === null)) {
+    if (operation.length + 1 && numbers.length === numFields && (operation && numbers !== null)) {
       const result = numbers.reduce ( function (a,b,c) {        
         return operationFunctions[operation[c-1]] (a,b)
       }).toFixed(2)
